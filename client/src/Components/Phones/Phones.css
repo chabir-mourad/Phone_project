@@ -1,0 +1,32 @@
+
+.card-titre{
+    font-size: 20px;
+}
+.card-desc{
+    font-size: 14px;
+    text-align: justify;
+}
+.card-img{
+
+ width: 50px;
+    height: 50px;
+}
+
+.item-card :hover{
+    box-shadow: seashell;
+}
+.sidenav{
+    height: 100%;
+    width: 160px;
+    position:sticky;
+    z-index: 1;
+    top: 300px;
+    left: 0;
+    background-color: grey;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.conta{
+    margin-left:160px;
+    margin-top: 100px;
+}

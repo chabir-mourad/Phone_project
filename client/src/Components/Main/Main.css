@@ -1,0 +1,33 @@
+.title1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    color: red;
+    position: relative;
+    top:20px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.title2{
+    font-size: 30px;
+    font-weight: 400;
+    color: green;
+    position: relative;
+    left:200px;
+    top:20px;
+}
+.title3{
+    font-size: 30px;
+    font-weight: 400;
+    color: grey;
+    position: relative;
+    right:200px;
+    top:20px;
+}
+.parag{
+    font-size: 15px;
+    color:black;
+    text-align: center;
+}

@@ -1,0 +1,19 @@
+.log-container {
+    padding: 190px;
+  
+    background-color: pink;
+    background-image: url("https://images.unsplash.com/photo-1434064511983-18c6dae20ed5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+    text-align: center;
+  }
+  
+  .log-title {
+    color: green;
+    text-align: center;
+    font-size: 28px;
+    position: relative;
+    top: 20px;
+  }
+  
+  .btn-warning {
+    margin-left: 20px;
+  }

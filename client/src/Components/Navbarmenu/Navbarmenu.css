@@ -1,0 +1,23 @@
+.title{
+    font-size: 20px;
+    font-weight: 200;
+    color:white;
+}
+
+.mr-sm-2{
+    width: 600px;
+    position: relative;
+    left: 150px;
+}
+.search-btn{
+    position: relative;
+    left: 150px;
+}
+.btn-shopping{
+    position: relative;
+    left:10px;
+}
+
+.hide-sm {
+    display: none;
+  }
