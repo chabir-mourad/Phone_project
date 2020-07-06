@@ -7,7 +7,8 @@ export default combineReducers({
  
 alert,
 auth ,
-products
+products 
+
 
 
 

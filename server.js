@@ -33,7 +33,7 @@ app.use('/login',require('./routes/auth'))
 app.use('/admin', require('./routes/index')) 
 
 
-
+app.use('/' , require('./routes/admin'))
 
 
 

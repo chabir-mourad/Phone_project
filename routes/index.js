@@ -2,7 +2,8 @@ const express = require('express');
 
 const router = express.Router()
 const Phone = require('../models/Phone')
-
+const {isAdmin}  = require('../middlware/admin');
+const auth = require('../middlware/auth');
 
 
 // @route  Post   admin/phones
@@ -11,10 +12,11 @@ const Phone = require('../models/Phone')
 
 
 
-router.post('/phones' , async(req,res)=> {
+router.post('/phones' , isAdmin ,async(req,res)=> {
 
 
 try {
+    console.log(req.user)
     const {name , price ,image , ram ,storage  , processor} = req.body
 
     if (!name || !price ||  !image , !ram , !storage , !processor) {
@@ -50,9 +52,9 @@ else {
 router.get('/phones' ,async(req,res)=> {
 
     try {
-    const product = await Phone.find()
+    const products = await Phone.find({})
     
-    res.json(product)
+    res.json(products)
     
         
     } catch (err) {
@@ -74,7 +76,7 @@ const phone = await Phone.findById(req.params.id_phone)
 
 
 if (!phone) {
-    res.status(404)
+    res.status(404).send('Product not Found')
     
 }
 
@@ -88,7 +90,7 @@ else {
     
 } catch (err) {
     if (err.kind === "ObjectId") {
-        res.status(404).json({message : "posts is Not Found"})
+        res.status(404).json({message : "Product is Not Found"})
     }
     console.error(err.message);
     res.status(500).send('Server is out ... ')
@@ -104,7 +106,7 @@ else {
 //@desc   delete a phone
 // @access  Private
 
-router.delete('/phones/:id_phone' , async(req,res)=> {
+router.delete('/phones/delete/:id_phone' ,isAdmin ,  async(req,res)=> {
 try {
 
 
@@ -124,7 +126,7 @@ try {
 
 
 
-router.put('/phones/:id_phone', async(req,res)=>{
+router.put('/phones/update/:id_phone', async(req,res)=>{
 
 
     try {

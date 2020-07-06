@@ -1,5 +1,5 @@
 
-import {PRODUCTS_NOT_FOUND , GET_PRODUCTS_SUCCESS ,GET_PRODUCTS, GET_PRODUCTS_BY_ID} from '../actions/types'
+import {PRODUCTS_NOT_FOUND , GET_PRODUCTS_SUCCESS ,GET_PRODUCTS, GET_PRODUCTS_BY_ID, GET_PRODUCTS_SUCCESS_BY_ID ,GET_PRODUCTS_FAIL_BY_ID} from '../actions/types'
 
 
 
@@ -10,12 +10,13 @@ const initialState = {
     product: {},
     isLoading: false,
     error: [],
-
+phone : {}
    
   };
   
 
   const products = (state = initialState, { type, payload }) => {
+    
     switch (type) {
       case GET_PRODUCTS:
         return {
@@ -37,8 +38,20 @@ const initialState = {
         case GET_PRODUCTS_BY_ID:
           return {
             ...state,
-            product: state.productList.filter(el => el.id === Number(payload))[0]
+            isLoading: true
           };
+          case GET_PRODUCTS_SUCCESS_BY_ID:
+            return {
+              ...state,
+              isLoading: false,
+              phone : payload
+            };
+          case GET_PRODUCTS_FAIL_BY_ID:
+            return {
+              ...state,
+              isLoading: false,
+              error: payload
+            }; 
 
 
 default : return state

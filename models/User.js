@@ -27,7 +27,8 @@ adress : {
 
 zipCode : {
     type : Number , 
-    required :true
+    required :true , 
+    default : 0 
 },
 avatar: {
     type: String
@@ -36,13 +37,15 @@ avatar: {
 
 phoneNumber : {
 type : Number , 
+default : 0 ,
 required  : true
 },
 
 date : {
     type : Date ,
 default : Date.now()
-}
+},
+isAdmin: { type: Boolean, required: true, default: false }
 
 
 

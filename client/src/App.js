@@ -1,20 +1,16 @@
-import React  , {Fragment}from 'react';
+import React  , { Component}from 'react';
 
 import './App.css';
 
-import Slider from './Components/Slider/Slider';
-import Main from './Components/Main/Main';
-import Phones from './Components/Phones/Phones';
 
-import Footer from './Components/Footer/Footer';
-// import Register from './Components/Auth/Register/Register';
+import Register from './Components/Auth/Register/Register';
 // import Login from './Components/Auth/Login/Login'
+import Phones from './Components/Phones/Phones';
 import { BrowserRouter  , Route , Switch } from 'react-router-dom';
 import SelectedPhone from './Components/SelectedPhone/SelectedPhone'
 // Redux config
 import {Provider} from 'react-redux'
 import store from '../src/store'
-import Navbarmenu from './Components/Navbarmenu/Navbarmenu';
 
 
 
@@ -23,38 +19,29 @@ import Navbarmenu from './Components/Navbarmenu/Navbarmenu';
 
 
 
-function App  () {
 
- 
+export default class App extends Component {
+
+  
+
+ render(){    
 
 
   
 		return (
-      <Provider store={store}>
+ <Provider store={store}>
      
-<Fragment>
+
 
 <BrowserRouter>
 <Switch>
-<Route exact path ="/" render="">
-<Navbarmenu />
-<Slider />
-<Main/>
-
-<Phones /> 
-
-<Footer/>
+<Route exact path ="/" component={Phones} />
 
 
+<Route exact path="/register" render={(props) => <Register {...props} /> }/>
 
-</Route>
 
-
-<Route
-          // exact
-          path='/:id'
-          render={(props) => <SelectedPhone {...props} />}
-        />
+<Route path="/product/:id" render={(props) => <SelectedPhone {...props} /> }/>
 
  
 </Switch>
@@ -80,12 +67,10 @@ function App  () {
 
 
 
-</Fragment>
 
 
     </Provider>
-		);
+    );
+    }
 	}
 
-
-export default App;
