@@ -10,7 +10,8 @@ const initialState = {
     product: {},
     isLoading: false,
     error: [],
-phone : {}
+    phone : {}, 
+
    
   };
   
@@ -22,12 +23,14 @@ phone : {}
         return {
           ...state,
           isLoading: true
+        
         };
       case GET_PRODUCTS_SUCCESS:
         return {
           ...state,
           isLoading: false,
-          productList: payload
+          productList: payload 
+          
         };
       case PRODUCTS_NOT_FOUND:
         return {

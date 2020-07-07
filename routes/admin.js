@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 // @access  Private
 
 
-router.get('/createAdmin' , async(req,res)=> {
+router.get('/' , async(req,res)=> {
 try {
     const user = new User({
         name: 'Mourad',

@@ -26,14 +26,14 @@ app.get('/', (req, res) => {
 // Deploy The Routes 
 
 
-app.use('/',require('./routes/users'))
+app.use('/users',require('./routes/users'))
 
 app.use('/login',require('./routes/auth'))
 
 app.use('/admin', require('./routes/index')) 
 
 
-app.use('/' , require('./routes/admin'))
+app.use('/createAdmin' , require('./routes/admin'))
 
 
 

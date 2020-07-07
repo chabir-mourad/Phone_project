@@ -17,7 +17,7 @@ import axios from 'axios'
 
 
 
-export default {setAuthToken }
+export default setAuthToken 
 
 
 

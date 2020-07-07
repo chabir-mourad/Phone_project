@@ -31,12 +31,12 @@ const gravatar = require('gravatar')
 
 router.post('/register' , [
     //check Username 
-    check('name' , "Name is Required").not().isEmpty().isLength({min:3}).withMessage('Name must have 3 characteres or more'),
+    check('name' , "Name is Required").not().isEmpty(),
     
     //check Email
     check('email' , "Please include a Valid email").isEmail(),
     //check Password length
-    check('password' , "Please enter a Password with 6 characteres or more").isLength({min : 6}).matches(/\d/).withMessage('Password must contain a number'),
+    check('password' , "Please enter a Password with 6 characteres or more"),
     //check Adress
     check('adress' , "adress is Required").not().isEmpty(),
     //check ZipCode

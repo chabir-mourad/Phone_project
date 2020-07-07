@@ -1,4 +1,5 @@
-import React  , { Component}from 'react';
+import React  , { useEffect}from 'react';
+import setAuthToken  from './globalHeader/setAuthToken'
 
 import './App.css';
 
@@ -11,21 +12,32 @@ import SelectedPhone from './Components/SelectedPhone/SelectedPhone'
 // Redux config
 import {Provider} from 'react-redux'
 import store from '../src/store'
+import Login from './Components/Auth/Login/Login';
+import Payement from './Components/payement/Payement';
+ import PrivateRoute from './Components/routing/PrivateRouter';
+import { loadUser } from './actions/auth';
+import Alert from './Components/Alert/Alert'
+
+ if (localStorage.token) {
+    setAuthToken(localStorage.token)
+}
 
 
 
-
-
-
-
-
-
-export default class App extends Component {
+function App() {
 
   
+ 
 
- render(){    
+   
 
+    useEffect(() => {
+        store.dispatch(loadUser())
+
+        return () => {
+         
+        }
+    }, [])
 
   
 		return (
@@ -34,17 +46,20 @@ export default class App extends Component {
 
 
 <BrowserRouter>
+<Alert/>
 <Switch>
 <Route exact path ="/" component={Phones} />
-
+<Route path="/product/:id" component={SelectedPhone}/>
 
 <Route exact path="/register" render={(props) => <Register {...props} /> }/>
+<Route exact path="/login" render={(props) => <Login {...props} /> }/>
+<PrivateRoute exact path="/payement" component ={Payement}/>
 
+</Switch>
 
-<Route path="/product/:id" render={(props) => <SelectedPhone {...props} /> }/>
 
  
-</Switch>
+
 
 </BrowserRouter>
 
@@ -72,5 +87,6 @@ export default class App extends Component {
     </Provider>
     );
     }
-	}
+	
 
+    export default App

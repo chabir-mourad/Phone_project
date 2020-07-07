@@ -5,23 +5,32 @@ import {Card , Button} from 'react-bootstrap'
 
 
 import { getProductsById } from '../../actions/products';
+
+
+
+
+
+
+
 const SelectedPhone = (props) => {
-  const id = props.match.params.id
+  
 
   const products = useSelector((state) => state.products);
-  
-const {isLoading , error , phone} = products
+
+ 
+const {isLoading , error , phone } = products
 const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProductsById(id));
-    return () => {
     
-    };
+    dispatch(getProductsById(props.match.params.id));
+    return () => {
+}
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   return isLoading ? (
+   
     <div className='row justify-content-md-center'>
       <div className='spinner-border' role='status'>
         <span className='sr-only'>Loading...</span>
@@ -38,12 +47,12 @@ const dispatch = useDispatch();
                   <Card.Title className="card-titre"> {phone.name}</Card.Title>
                   <Card.Text className="card-desc"><span>Stockage :{phone.storage}</span> <span>Ram :{phone.ram}</span> <span>Processeur :{phone.processor}</span></Card.Text>
                  
-                  <Button variant="primary">vkrlerkel</Button>
+                  <Button variant="primary">{phone.price}</Button>
                 
                 </Card.Body>
               </Card>
          
-  );
-};
+  )
+}
 
 export default SelectedPhone;

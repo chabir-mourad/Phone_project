@@ -2,18 +2,30 @@ import React, { Fragment } from 'react'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Navbar,Button , Nav,FormControl } from 'react-bootstrap' ;
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {logout} from '../../actions/auth';
 
 import './Navbarmenu.css'
 import { Link } from 'react-router-dom';
-// import {connect} from 'react-redux'
-// import PropTypes  from 'prop-types'
-// import {logout} from '../../actions/auth'
 
 
 
 
 
-const Navbarmenu = ()=>{
+
+const Navbarmenu = ({ auth:{ isAuthenticated,loading},logout})=>{
+        const authLinks=(
+                <ul>
+                     <li>
+                     <a onClick={logout} href='#!'>
+                      <i className="fas-fa-sign-out-alt"></i> {''}
+                      <Button variant="danger">Logout</Button></a>
+
+                     </li>   
+                </ul>
+
+        );
   
 
 const guestLinks = (
@@ -46,26 +58,26 @@ const guestLinks = (
 </Nav>
 
 
-        <Fragment>{guestLinks}</Fragment>
+{!loading &&( <Fragment>{isAuthenticated ? authLinks : guestLinks} </Fragment>)}
     
 
 </Navbar.Collapse>
+
 </Navbar>
+
 
         )
     
 }
-
-// Navbarmenu.propTypes = {
-//    logout : PropTypes.func.isRequired,
-//     auth : PropTypes.object.isRequired,
-// }
-
-
-// const mapStateToProps = state => ({
-//     auth: state.auth
-// })
+Navbarmenu.propTypes={
+        logout:PropTypes.func.isRequired,
+        auth:PropTypes.object.isRequired
+};
 
 
+const mapStateToProps = state=>({
+        auth:state.auth
 
-export default  Navbarmenu
+});
+
+export default connect(mapStateToProps,{logout})(Navbarmenu)

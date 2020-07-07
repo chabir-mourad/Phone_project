@@ -24,12 +24,14 @@ export const getProducts = () => async dispatch => {
 
 
 export const getProductsById = (id) => async dispatch => {
+
  try {
   dispatch({
     type : GET_PRODUCTS_BY_ID,
     payload : id 
   })
   const {data} = await axios.get('/admin/phones/' + id)
+  
   dispatch({
     type : GET_PRODUCTS_SUCCESS_BY_ID ,
     payload : data

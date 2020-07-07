@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 import {setAlert} from '../../../actions/alert'
 import {register} from '../../../actions/auth'
 import PropTypes from 'prop-types';
-import Alert from '../../Alert/Alert'
+// import Alert from '../../Alert/Alert'
 import {Redirect} from 'react-router-dom'
 
 
@@ -30,23 +30,29 @@ const onChange = e=> setFormData({...formData ,[e.target.name] : e.target.value 
 
 const onSubmit =async e=> {
     e.preventDefault()
-
-register({name , email , zipCode , phoneNumber , adress , password})
-
-
+  if (zipCode.length <4) {
+    setAlert("zip Code can not have less then 4 Numbers" , "danger")
+  }
+  else {
+   
+  
+    register({name , email , zipCode , phoneNumber , adress , password})
+  }
 
 
 }
 
-// Redirect if login
 if (isAuthenticated) {
-  return <Redirect to="/SelectedPhone" />
+ return <Redirect to="/payement"></Redirect>
 }
+
+
+
 
 
   return (
     <div className="reg-container">
-<Alert />
+
       <h1 className="reg-title"> REGISTER</h1> 
       <form onSubmit={e=> onSubmit(e)}>
         

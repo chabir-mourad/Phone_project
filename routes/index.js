@@ -12,11 +12,11 @@ const auth = require('../middlware/auth');
 
 
 
-router.post('/phones' , isAdmin ,async(req,res)=> {
+router.post('/phones' ,async(req,res)=> {
 
 
 try {
-    console.log(req.user)
+  
     const {name , price ,image , ram ,storage  , processor} = req.body
 
     if (!name || !price ||  !image , !ram , !storage , !processor) {
@@ -52,7 +52,7 @@ else {
 router.get('/phones' ,async(req,res)=> {
 
     try {
-    const products = await Phone.find({})
+    const products = await Phone.find()
     
     res.json(products)
     

@@ -16,7 +16,7 @@ const bcrypt = require('bcryptjs')
 
 
 
-router.get('/auth', async(req,res)=> {
+router.get('/auth',auth ,async(req,res)=> {
   
     try {
         const user = await User.findById(req.user.id).select('-passwword')
@@ -56,7 +56,9 @@ let user = await User.findOne({email})
 
 // Check the user Email
 if (!user) {
-return    res.status(400).json({errors : [msg = "Invalid Email"]})
+    return res
+    .status(400)
+    .json({ errors: [{ msg: 'Invalid Credentials' }] });
 }
 
 // Check the user Passwword
@@ -65,7 +67,9 @@ return    res.status(400).json({errors : [msg = "Invalid Email"]})
 
 
  if (!isMatch) {
-    return    res.status(400).json({errors : [msg = "Invalid Password"]})
+    return res
+          .status(400)
+          .json({ errors: [{ msg: 'Invalid Credentials' }] });
  }
 
 const payload = {
@@ -73,14 +77,15 @@ const payload = {
         id : user.id
     }
 }
-jwt.sign(payload,config.get('jwtSecret') , {expiresIn : 460000} , function(err,token) {
-    if (err) {console.log(err)}
-    else {
-        res.json({token})
-    }
-    
-})
-
+ jwt.sign(
+        payload,
+        config.get('jwtSecret'),
+        { expiresIn: '5 days' },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
 
 
 

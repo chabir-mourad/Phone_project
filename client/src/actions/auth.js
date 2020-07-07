@@ -57,7 +57,7 @@ const body = JSON.stringify({name,email,password,adress,phoneNumber,zipCode})
 try {
     
 
-    const res = await axios.post('/register' , body , config)
+    const res = await axios.post('/users/register' , body , config)
 
     dispatch({
         type : REGISTER_SUCCESS,
@@ -70,7 +70,7 @@ try {
  const errors = err.response.data.errors
 
  if (errors) {
-     errors.forEach(error => { dispatch(setAlert(error.msg , 'danger'))
+     errors.forEach(error => { dispatch(setAlert(error.msg))
          
      });
  }
@@ -101,13 +101,12 @@ export const login =(email,password)=> async dispatch=> {
         }
     }
     
-    const body = JSON.stringify({email,password})
+    
+    const body = { email, password };
     
     
     
     try {
-        
-    
         const res = await axios.post('/login/auth' , body , config)
     
         dispatch({
@@ -115,14 +114,15 @@ export const login =(email,password)=> async dispatch=> {
             payload : res.data
             
         })
-        console.log(res.data)
+      
         dispatch(loadUser())
     
     } catch (err) {
      const errors = err.response.data.errors
     
      if (errors) {
-         errors.forEach(error => { dispatch(setAlert(error.msg))
+        errors.forEach(error => { dispatch(setAlert(error.msg))
+            
              
          });
      }
@@ -139,4 +139,6 @@ export const login =(email,password)=> async dispatch=> {
 
 
 //Logout  the User
-export const logout = () => ({ type: LOGOUT });
+export const logout = () =>  dispatch => {
+    dispatch({ type: LOGOUT });
+};
