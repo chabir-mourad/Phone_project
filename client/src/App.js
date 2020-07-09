@@ -17,8 +17,12 @@ import Payement from './Components/payement/Payement';
  import PrivateRoute from './Components/routing/PrivateRouter';
 import { loadUser } from './actions/auth';
 import Alert from './Components/Alert/Alert'
+import Loginamin from './Components/AuthAdmin/Loginadmin'
+import EditableTable from './Components/DashboaardP&U/Dashboard';
+ 
 
- if (localStorage.token) {
+
+if (localStorage.token) {
     setAuthToken(localStorage.token)
 }
 
@@ -54,7 +58,11 @@ function App() {
 <Route exact path="/register" render={(props) => <Register {...props} /> }/>
 <Route exact path="/login" render={(props) => <Login {...props} /> }/>
 <PrivateRoute exact path="/payement" component ={Payement}/>
+<Route path='/admin' component={Loginamin}/>
 
+<Route  path="/dashboard" component={EditableTable}/>
+
+{/* <Route path="/add" component={addProduct} /> */}
 </Switch>
 
 

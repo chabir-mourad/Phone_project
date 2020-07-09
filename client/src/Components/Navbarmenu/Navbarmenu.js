@@ -47,6 +47,7 @@ const guestLinks = (
   
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <i class="fas fa-mobile-alt" />
     <Navbar.Brand href="#home">SmartTech</Navbar.Brand>
   
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

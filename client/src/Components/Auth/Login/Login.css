@@ -1,0 +1,32 @@
+#basic-addon1{
+    color:black;
+    background-color: #FFC312;
+  }
+  .login_page{
+    background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQekzezzqGCEoDhIy_nBe-N7QJXle092sPLEwRMKuUuErwundak&s')
+    }
+    .login_page {
+      height: 45rem;
+    }
+   
+  
+    
+  .quest{
+    color:white
+  }
+  
+  
+  .card {
+    margin: auto;
+    position: relative;
+    top:100px;
+  }
+  .bf{
+    background-image: url('https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png');
+  }
+  .btn-login{
+    float: right;
+  }
+  .forms{
+    display: flex;
+  }

@@ -1,5 +1,5 @@
-import React  , {useState}from "react";
-import { Button} from "react-bootstrap";
+import React  , {useState , Fragment}from "react";
+import { Button , Card , Form , InputGroup , FormControl} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Register.css";
 // import axios from  'axios'
@@ -8,8 +8,8 @@ import {setAlert} from '../../../actions/alert'
 import {register} from '../../../actions/auth'
 import PropTypes from 'prop-types';
 // import Alert from '../../Alert/Alert'
-import {Redirect} from 'react-router-dom'
-
+import {Redirect , Link} from 'react-router-dom'
+import '../Register/Register.css'
 
 
  const Register =({setAlert , register , isAuthenticated})=>  {
@@ -51,33 +51,91 @@ if (isAuthenticated) {
 
 
   return (
-    <div className="reg-container">
-
-      <h1 className="reg-title"> REGISTER</h1> 
-      <form onSubmit={e=> onSubmit(e)}>
-        
-        <input type="text"  name="name" value={name}  onChange={e=> onChange(e)}/><br />
-        
-
-     
-        <input type="email" name="email" value={email} placeholder="Email Adress" onChange={e=> onChange(e)}/><br />
-
-          
+    <Fragment>
+    <div className="register-page" >
     
-        <input type="password" name="password" value={password} placeholder="Password" autoComplete="true" onChange={e=> onChange(e)}/><br />
+    <Card  bg={'Success'.toLowerCase()} style={{ width: '30rem' }}>
+    <Card.Header>
+      <h3 className="title-register">Registration-Form</h3>
+     </Card.Header>
+      <Card.Body>
+      <hr></hr>
+  <Form onSubmit={e=> onSubmit(e)}>
+  <InputGroup className="mb-3">
+  <Form.Label>Username : </Form.Label>
+  <FormControl
+    placeholder="Enter your Name"
+    aria-label="Username"
+    aria-describedby="basic-addon1" name="name" value={name}  onChange={e=> onChange(e)}
+  />
+</InputGroup>
+ 
+<InputGroup className="mb-3">
+<Form.Label>Email adress:</Form.Label>
+  
+  <Form.Control type="email" 
+  placeholder="Enter your Email"
+  aria-describedby="basic-addon1" name="email" value={email}  onChange={e=> onChange(e)} />
+
+</InputGroup>
+<InputGroup className="mb-3">
+<Form.Label>Password :</Form.Label>
+  
+  <Form.Control type="password" 
+  placeholder="Enter your Password"
+  aria-describedby="basic-addon1" name="password" value={password}  onChange={e=> onChange(e)} />
+
+</InputGroup>
+<InputGroup className="mb-3">
+<Form.Label> Address</Form.Label>
+  
+  <Form.Control type="adress" 
+  placeholder="Enter your Adress"
+  aria-describedby="basic-addon1 " name="adress" value={adress}  onChange={e=> onChange(e)}/>
+
+</InputGroup>
+<InputGroup className="mb-3">
+<Form.Label>Code postal  : </Form.Label>
+  
+  <Form.Control type="adress" 
+  placeholder="Enter your zipCode"
+  aria-describedby="basic-addon1" name="zipCode" value={zipCode}  onChange={e=> onChange(e)} />
+
+</InputGroup>
+<InputGroup className="mb-3">
+<Form.Label>Téléphone mobile  :</Form.Label>
+  
+  <Form.Control type="phone" 
+  placeholder="Enter your PhoneNumber"
+  aria-describedby="basic-addon1"  name="phoneNumber" value={phoneNumber}  onChange={e=> onChange(e)}/>
+
+</InputGroup>
+<Button variant="warning" type="submit" className="btn-register" >
+  Register
+</Button>
+</Form>
+</Card.Body>
+ 
+  <Card.Footer>
     
-        
-        <input type="text"  name="adress" value={adress} onChange={e=> onChange(e)}/><br />
-        
-        <input  value={phoneNumber} name="phoneNumber"  onChange={e=> onChange(e)}/> <br />
+<span>
+DÉJÀ INSCRIT?
+
+</span> <span>
+   <Link to="/login">Login</Link>
+</span>
+
+
+
+</Card.Footer>
+
+  
+  </Card>
+
+</div>
+</Fragment>
     
-        <input  value={zipCode} name="zipCode" onChange={e=> onChange(e)}/> <br />
-        <Button type="submit" variant="danger" className="sign-btn" >
-          Register
-        </Button>
-      
-      </form>
-    </div>
+    
   );
 }
 

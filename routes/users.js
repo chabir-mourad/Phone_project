@@ -36,7 +36,7 @@ router.post('/register' , [
     //check Email
     check('email' , "Please include a Valid email").isEmail(),
     //check Password length
-    check('password' , "Please enter a Password with 6 characteres or more"),
+    check('password' , "Please enter a Password with 6 characteres or more").not().isEmpty(),
     //check Adress
     check('adress' , "adress is Required").not().isEmpty(),
     //check ZipCode
@@ -91,7 +91,7 @@ user.password = await bcrypt.hash(password, salt)
 
 
 // Save The user 
- user.save()
+ await user.save()
 
 
 const payload = {
@@ -126,12 +126,12 @@ res.status(500).send('Server is out')
 // @access  Private
 
 
-router.get('/' , async(req,res)=> {
+router.get('/users' , async(req,res)=> {
 
 
     try {
 
- const users =   await User.find() 
+ const users =   await User.find({}) 
 
 res.json(users)
         
@@ -146,6 +146,40 @@ res.status(500).send('Server is out')
 
 })
 
+
+router.delete('/users/:id_user' , async(req,res) => {
+const user_id = req.params.id_user
+
+    try {
+  const userDeleted =   await User.findById(user_id)
+
+
+
+  await userDeleted.remove()
+  
+
+
+  const users = await User.find({})
+
+  res.json(users)
+
+
+  
+
+
+
+        
+    } catch (err) {
+        if (err.kind === "ObjectId") {
+            res.status(404).json({message : "User is Not Found"})
+        }
+        console.error(err);
+        res.status(500).send('Server is out')
+    }
+
+
+
+})
 
 
 module.exports = router

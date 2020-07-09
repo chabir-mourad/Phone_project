@@ -35,6 +35,7 @@ LOGOUT
             return {
               ...state,
               ...payload,
+              
               isAuthenticated: true,
               loading: false
             };

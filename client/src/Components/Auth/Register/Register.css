@@ -1,0 +1,75 @@
+.register-page{
+    background-image:url('https://s3.envato.com/files/243754334/primag.jpg') ;
+    height: 45rem;
+}
+.firstname{
+    margin-left: 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: black;
+    margin-top: 5px;
+}
+.email{
+    margin-left: 44px;
+    font-family: sans-serif;
+    color: black;
+    font-size: 14px;
+    margin-top: 13px;
+}
+.password{
+    color: black;
+    margin-top: 9px;
+    font-size: 14px;
+    font-family: sans-serif;
+    margin-left: 6px;
+    margin-top: 9px;
+}
+.adress{
+    font-size: 16px;
+    margin-left: -13px;
+    margin-top: 10px;
+    color: black;
+}
+.zipcode{
+    font-size: 16px;
+    margin-left: -13px;
+    margin-top: 10px;
+    color: black;
+}
+.phone{
+    font-size: 16px;
+    margin-left: -13px;
+    margin-top: 10px;
+    color: black; 
+}
+.btn-register{
+    color: black;
+    font-size: 16px;
+    border: 1px solid white;
+    background-color: #ecbf28;
+    width: 32%;
+    margin-left: 34%;
+    margin-top: 2px;
+    box-shadow: 0px 2px 2px 0px white;
+
+
+}
+.btn-register:hover{
+    box-shadow: 2px 1px 2px 3px #99ccff;
+    background:#5900a6;
+    color:#fff;
+    transition: background-color 1.15s ease-in-out,border-color 1.15s ease-in-out,box-shadow 1.15s ease-in-out;
+    
+
+}
+.title-register{
+    color: #d44360;
+    text-align: center;
+}
+
+    
+
+.card {
+    margin: auto;
+    
+}

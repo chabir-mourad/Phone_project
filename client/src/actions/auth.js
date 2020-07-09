@@ -6,7 +6,8 @@ import {
     USER_LOADED, 
     LOGIN_FAIL,
     LOGIN_SUCCESS,
-    LOGOUT
+    LOGOUT,
+
 } from './types'
 
 import {setAlert} from './alert' 
@@ -135,6 +136,8 @@ export const login =(email,password)=> async dispatch=> {
     }
     
     }
+
+   
 
 
 

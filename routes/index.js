@@ -2,9 +2,10 @@ const express = require('express');
 
 const router = express.Router()
 const Phone = require('../models/Phone')
-const {isAdmin}  = require('../middlware/admin');
-const auth = require('../middlware/auth');
 
+
+const admin = require('../middlware/admin');
+const _ = require('lodash')
 
 // @route  Post   admin/phones
 //@desc   Create a Product
@@ -12,18 +13,18 @@ const auth = require('../middlware/auth');
 
 
 
-router.post('/phones' ,async(req,res)=> {
+router.post('/phones/add' ,async(req,res)=> {
 
 
 try {
   
     const {name , price ,image , ram ,storage  , processor} = req.body
 
-    if (!name || !price ||  !image , !ram , !storage , !processor) {
+    if (!name || !price ||  !image || !ram || !storage || !processor) {
         res.status(400).send('you need Please enter all the fields')
     }
 else {
-    newProduct = new Phone({
+newProduct = new Phone({
   name,
   price,  
   image,
@@ -33,7 +34,7 @@ else {
     })
 
 
-    const product = await newProduct.save()
+   const product=  await newProduct.save()
    res.json(product)
 }
  
@@ -51,7 +52,11 @@ else {
 
 router.get('/phones' ,async(req,res)=> {
 
+
     try {
+    
+ 
+
     const products = await Phone.find()
     
     res.json(products)
@@ -106,7 +111,7 @@ else {
 //@desc   delete a phone
 // @access  Private
 
-router.delete('/phones/delete/:id_phone' ,isAdmin ,  async(req,res)=> {
+router.delete('/phones/delete/:id_phone' ,  async(req,res)=> {
 try {
 
 
@@ -126,7 +131,7 @@ try {
 
 
 
-router.put('/phones/update/:id_phone', async(req,res)=>{
+router.put('/phones/update/:id_phone',admin, async(req,res)=>{
 
 
     try {
@@ -161,6 +166,9 @@ res.json({message : "document updated"})
     }
 
 })
+
+
+
 
 
 

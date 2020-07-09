@@ -1,18 +1,18 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState} from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { connect  } from 'react-redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import '../Login/Login.css'
-import { login } from '../../../actions/auth';
+import '../Auth/Login/Login.css'
+import { loginAdmin } from '../../actions/admin';
 import {Form , Card , InputGroup , FormControl} from 'react-bootstrap'
-import { setAlert } from '../../../actions/alert';
-import { Button } from 'react-bootstrap';
-const Login = ({ login, isAuthenticated  }) => {
 
-  
+import { Button } from 'react-bootstrap';
+const Loginadmin = ({ loginAdmin, isAuthenticatedAdmin }) => {
+   
+    
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+      email: '',
+      password: ''
   });
 
   const { email, password } = formData;
@@ -23,13 +23,13 @@ const Login = ({ login, isAuthenticated  }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    login(email, password);
+    loginAdmin(email, password);
   }
 
 
-  if (isAuthenticated){
-    
-    return <Redirect to="/payement"/>;
+  if (isAuthenticatedAdmin){
+   
+  return <Redirect to="/dashboard"/>;
   }
 
  
@@ -89,15 +89,14 @@ const Login = ({ login, isAuthenticated  }) => {
   );
 };
 
-Login.propTypes = {
-  login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool,
-  setAlert: PropTypes.func.isRequired
+Loginadmin.propTypes = {
+    loginAdmin: PropTypes.func.isRequired,
+    isAuthenticatedAdmin: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated
+    isAuthenticatedAdmin: state.admin.isAuthenticatedAdmin
   
 });
 
-export default connect(mapStateToProps, { login , setAlert })(Login);
+export default connect(mapStateToProps, { loginAdmin  })(Loginadmin);

@@ -1,19 +1,21 @@
 import React from 'react'
 
-
-
+import {Card , Button , Form } from 'react-bootstrap'
+ 
 
 const Payement = () => {
  
 
     return (
-        <div>
-        <h1> Payement</h1>
-         <h2> MasterCard</h2>
-         <h2> VisaCard</h2>
-         <h2> PayPal</h2>
-         <button type="submit"> Continue</button>   
-        </div>
+        <Card style={{ width: '35rem' }}>
+     
+        <Card.Body>
+          <Card.Title>Credit Card Payment</Card.Title>
+          <Form.Control type="email" placeholder="Enter email" />
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+      </Card>
+       
     )
 }
 Payement.propTypes={
