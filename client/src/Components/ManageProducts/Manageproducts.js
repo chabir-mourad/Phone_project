@@ -3,7 +3,7 @@ import {Button} from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux';
 import {getProducts , deleteProduct} from '../../actions/products'
 
-import AddProduct from './AddProduct';
+import {Link} from "react-router-dom";
 
 function Manageproducts() {
 
@@ -34,7 +34,9 @@ const productList = useSelector((state) => state.products.productList);
             <div id="table" className="table-editable">
               <span className="table-add float-right mb-3 mr-2">
                 <a href="#!" className="text-success">
+                <Link to="/addProduct">
                   <i className="fas fa-plus fa-2x" aria-hidden="true"></i>
+                  </Link>
                 </a>
               </span>
               <table className="table table-bordered table-responsive-md table-striped text-center">
@@ -93,7 +95,7 @@ const productList = useSelector((state) => state.products.productList);
         </div>
         
       </div>
-      <AddProduct/>
+  
 </Fragment>
           
     )

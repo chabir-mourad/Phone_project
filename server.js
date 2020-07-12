@@ -36,6 +36,8 @@ app.use('/admin', require('./routes/index'))
 app.use('/createAdmin' , require('./routes/admin'))
 
 
+// app.use('/command')
+
 
 
 

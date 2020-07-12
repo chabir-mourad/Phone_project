@@ -19,11 +19,10 @@ router.post('/phones/add' ,async(req,res)=> {
 try {
   
     const {name , price ,image , ram ,storage  , processor} = req.body
+   
+    // console.log(req.body.storage)
 
-    if (!name || !price ||  !image || !ram || !storage || !processor) {
-        res.status(400).send('you need Please enter all the fields')
-    }
-else {
+  
 newProduct = new Phone({
   name,
   price,  
@@ -34,9 +33,11 @@ newProduct = new Phone({
     })
 
 
+
+
    const product=  await newProduct.save()
    res.json(product)
-}
+
  
     
 } catch (err) {
@@ -131,7 +132,7 @@ try {
 
 
 
-router.put('/phones/update/:id_phone',admin, async(req,res)=>{
+router.put('/phones/update/:id_phone', async(req,res)=>{
 
 
     try {

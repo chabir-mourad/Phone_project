@@ -1,5 +1,5 @@
 
-import {PRODUCTS_NOT_FOUND , GET_PRODUCTS_SUCCESS ,GET_PRODUCTS, GET_PRODUCTS_BY_ID, GET_PRODUCTS_SUCCESS_BY_ID ,GET_PRODUCTS_FAIL_BY_ID, DELETE_PRODUCT_ERROR, DELETE_PRODUCT,  ADD_PRODUCT , ADD_ERROR , ADD_REQUEST} from '../actions/types'
+import {PRODUCTS_NOT_FOUND , GET_PRODUCTS_SUCCESS ,GET_PRODUCTS, GET_PRODUCTS_BY_ID, GET_PRODUCTS_SUCCESS_BY_ID ,GET_PRODUCTS_FAIL_BY_ID, DELETE_PRODUCT_ERROR, DELETE_PRODUCT,  ADD_PRODUCT , ADD_ERROR , ADD_REQUEST, UPDATE_PRODUCT} from '../actions/types'
 
 
 
@@ -9,7 +9,7 @@ const initialState = {
     productList: [],
     product: {},
     isLoading: false,
-    error: [],
+    error : null ,
     phone : {}, 
 
    
@@ -76,7 +76,7 @@ const initialState = {
               return {
               ...state ,
               isLoading : false ,
-              productList: [payload, ...state.productList]
+              ...payload
 
             }
             case ADD_ERROR : 
@@ -84,6 +84,10 @@ const initialState = {
               ...state ,
               isLoading : false ,
               error : payload
+            }
+            case UPDATE_PRODUCT : 
+            return {
+              
             }
   
 

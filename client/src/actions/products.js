@@ -1,5 +1,5 @@
-import {GET_PRODUCTS , GET_PRODUCTS_SUCCESS , PRODUCTS_NOT_FOUND , GET_PRODUCTS_BY_ID , GET_PRODUCTS_SUCCESS_BY_ID , GET_PRODUCTS_FAIL_BY_ID, ADD_PRODUCT, ADD_ERROR, DELETE_PRODUCT , DELETE_PRODUCT_ERROR , ADD_REQUEST} from './types' 
-
+import {GET_PRODUCTS , GET_PRODUCTS_SUCCESS , PRODUCTS_NOT_FOUND , GET_PRODUCTS_BY_ID , GET_PRODUCTS_SUCCESS_BY_ID , GET_PRODUCTS_FAIL_BY_ID, ADD_PRODUCT, ADD_ERROR, DELETE_PRODUCT , DELETE_PRODUCT_ERROR , ADD_REQUEST, UPDATE_PRODUCT, UPDATE_PRODUCT_ERROR} from './types' 
+import {setAlert} from './alert'
 import axios from 'axios'
 
 export const getProducts = () => async dispatch => {
@@ -26,10 +26,10 @@ export const getProducts = () => async dispatch => {
 export const getProductsById = (id) => async dispatch => {
   dispatch({
     type : GET_PRODUCTS_BY_ID
-    
+
   })
  try {
-  const phone = await axios.get('/admin/phones/' + id)
+  let phone = await axios.get(`/admin/phones/${id}`)
 
   
   dispatch({
@@ -52,7 +52,12 @@ export const getProductsById = (id) => async dispatch => {
 
   export const addProduct =({name,price,image,storage,ram,processor})=> async dispatch=> {
 
-    const config = {
+    dispatch({
+      type : ADD_REQUEST    
+  })
+    
+    try {
+      const config = {
         headers : {
             'Content-Type' : "application/json"
         }
@@ -60,15 +65,10 @@ export const getProductsById = (id) => async dispatch => {
     
     const body = JSON.stringify({name,price,image,storage,ram,processor})
     
-    
-    
-    try {
-      dispatch({
-        type : ADD_REQUEST    
-    })
+      const res = await axios.post('/admin/phones/add' , body , config)
 
     
-        const res = await axios.post('/admin/phones/add' , body , config)
+       
     
         dispatch({
             type : ADD_PRODUCT,
@@ -78,10 +78,17 @@ export const getProductsById = (id) => async dispatch => {
      dispatch(getProducts());
         
     } catch (err) {
-      dispatch({
-        type: ADD_ERROR ,
-        payload : { msg: err.response.statusText, status: err.response.status }
-      })
+      const errors = err.response.data.errors
+
+      if (errors) {
+          errors.forEach(error => { dispatch(setAlert(error.msg))
+              
+          });
+      }
+         dispatch({
+             type : ADD_ERROR,
+            
+         })    
      
     
     }
@@ -93,8 +100,6 @@ export const getProductsById = (id) => async dispatch => {
 
 
 export const deleteProduct = (id)=> async dispatch => {
-
-
 
       try {
         
@@ -121,4 +126,28 @@ export const deleteProduct = (id)=> async dispatch => {
 
 
 
-    
+        export const editProduct = (id)=> async dispatch => {
+
+          try {
+            
+            await axios.put(`/admin/phones/update/${id}`)
+          
+            dispatch({
+              type : UPDATE_PRODUCT , 
+              payload : id
+            })
+            dispatch(getProducts())
+          
+          } catch (err) {
+            dispatch({
+              type: UPDATE_PRODUCT_ERROR ,
+              payload: { msg: err.response.statusText, status: err.response.status }
+            });
+          }
+          
+          
+          
+          
+          
+            }
+      

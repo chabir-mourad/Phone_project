@@ -3,25 +3,27 @@ import {FormControl , Button , Form, Col} from 'react-bootstrap'
 import PropTypes from 'prop-types';
 import {addProduct} from '../../actions/products'
 import { connect } from 'react-redux'
+// import {setAlert} from '../../actions/alert'
  const  AddProduct =({addProduct})=> {
     const [formData, setFormData] = useState({
          name :"" ,
          image:"" ,
-         stockage:"" ,
+         storage:"" ,
          ram:"" ,
-          processeur:"" ,
-          prix: "" 
+         processor:"" ,
+         price: "" 
    })
 
-   const {name , image , stockage , ram , processeur , prix} = formData
+   const {name , image , storage , ram , processor , price} = formData
   
    const onChange = e=> setFormData({...formData ,[e.target.name] : e.target.value })
 
-   const onSubmit = async e => {
+   const onSubmit =  e => {
         e.preventDefault();
 
 
-    addProduct({name , image , stockage , ram , processeur , prix})
+     addProduct({name , image , storage , ram , processor , price})
+    
 
    }
 
@@ -30,39 +32,38 @@ import { connect } from 'react-redux'
     return (
         
         
-<Form onSubmit={e=>{onSubmit(e)}}>
+<Form onSubmit={onSubmit}>
   <Form.Row>
   <Col>
-  <FormControl aria-label="Default" aria-describedby="inputGroup-sizing-default"   name="name" value={name}  onChange={e=> onChange(e)}/>
+  <FormControl aria-label="Default" aria-describedby="inputGroup-sizing-default"   name="name" value={name}  onChange={onChange}/>
   </Col>
     <Col>
     <FormControl
 aria-label="Default"
-aria-describedby="inputGroup-sizing-default" value={image} name='image' onChange={e=> onChange(e)}
+aria-describedby="inputGroup-sizing-default" name='image' value={image}  onChange={e=> onChange(e)}
 />
     </Col>
     <Col>
     <FormControl
 aria-label="Default"
-aria-describedby="inputGroup-sizing-default" value={stockage} name='stockage' onChange={e=> onChange(e)}
+aria-describedby="inputGroup-sizing-default" name='storage' value={storage}  onChange={e=> onChange(e)}
+/>
+    </Col>
+    <Col>
+    <FormControl aria-label="Default" aria-describedby="inputGroup-sizing-default" value={ram} name="ram" onChange={e=> onChange(e)}
 />
     </Col>
     <Col>
     <FormControl
 aria-label="Default"
-aria-describedby="inputGroup-sizing-default" value={ram} name="ram" onChange={e=> onChange(e)}
+aria-describedby="inputGroup-sizing-default" value={processor} name="processor" onChange={e=> onChange(e)}
 />
     </Col>
     <Col>
     <FormControl
 aria-label="Default"
-aria-describedby="inputGroup-sizing-default" value={processeur} name="processeur" onChange={e=> onChange(e)}
-/>
-    </Col>
-    <Col>
-    <FormControl
-aria-label="Default"
-aria-describedby="inputGroup-sizing-default" value={prix} name='prix' onChange={e=> onChange(e)}
+aria-describedby="inputGroup-sizing-default" value={price} name='price
+' onChange={e=> onChange(e)}
 />
     </Col>
     <Col>

@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {Card , Button} from 'react-bootstrap'
 
 
 import { getProductsById } from '../../actions/products';
-
+import Navbarmenu from '../Navbarmenu/Navbarmenu'
 
 
 
@@ -16,9 +16,13 @@ const SelectedPhone = (props) => {
   
 
   const products = useSelector((state) => state.products);
+  const phone = useSelector(state=>state.products.phone)
+console.log('phone', phone)
+ const id =props.match.params.id
+const {isLoading , error  } = products
+console.log('error', error)
 
- 
-const {isLoading , error , phone } = products
+console.log(phone)
 const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,7 +32,9 @@ const dispatch = useDispatch();
 }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
-
+ 
+console.log(phone)
+console.log(id)
   return isLoading ? (
    
     <div className='row justify-content-md-center'>
@@ -36,12 +42,11 @@ const dispatch = useDispatch();
         <span className='sr-only'>Loading...</span>
       </div>
     </div>
-  ): error ? (
-    <div>{error} </div>
-   
+  
   )  : (
   
         <Card border="light" className="item-card" style={{ width: "18rem" }}>
+       
                 <Card.Img variant="top" className="card-img" src={phone.image} />
                 <Card.Body>
                   <Card.Title className="card-titre"> {phone.name}</Card.Title>
@@ -51,7 +56,7 @@ const dispatch = useDispatch();
                 
                 </Card.Body>
               </Card>
-         
+              
   )
 }
 
