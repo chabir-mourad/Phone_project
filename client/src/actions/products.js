@@ -96,7 +96,7 @@ export const getProductsById = (id) => async dispatch => {
     }
 
 
-
+// delete Product
 
 
 export const deleteProduct = (id)=> async dispatch => {
@@ -126,15 +126,16 @@ export const deleteProduct = (id)=> async dispatch => {
 
 
 
-        export const editProduct = (id)=> async dispatch => {
+// Edit Product
+        export const editProduct = (id , updatedProduct)=> async dispatch => {
 
           try {
             
-            await axios.put(`/admin/phones/update/${id}`)
+         const res =  await axios.put(`/admin/phones/update/${id}` , updatedProduct)
           
             dispatch({
               type : UPDATE_PRODUCT , 
-              payload : id
+              payload : res.data
             })
             dispatch(getProducts())
           

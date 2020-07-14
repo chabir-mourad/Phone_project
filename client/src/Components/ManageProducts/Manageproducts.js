@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import {getProducts , deleteProduct} from '../../actions/products'
 
 import {Link} from "react-router-dom";
-
-function Manageproducts() {
+import EditProduct from '../EditProduct/EditProduct'
+function Manageproducts(phone) {
 
 const isLoading = useSelector((state) => state.products.isLoading);
 const productList = useSelector((state) => state.products.productList);
@@ -33,11 +33,11 @@ const productList = useSelector((state) => state.products.productList);
           <div className="card-body">
             <div id="table" className="table-editable">
               <span className="table-add float-right mb-3 mr-2">
-                <a href="#!" className="text-success">
+                
                 <Link to="/addProduct">
                   <i className="fas fa-plus fa-2x" aria-hidden="true"></i>
                   </Link>
-                </a>
+              
               </span>
               <table className="table table-bordered table-responsive-md table-striped text-center">
                 <thead>
@@ -49,6 +49,8 @@ const productList = useSelector((state) => state.products.productList);
                     <th className="text-center">Processeur</th>
                     <th className="text-center">Prix</th>
                     <th className="text-center">Remove</th>
+                    <th className="text-center">Edit</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
@@ -77,6 +79,17 @@ const productList = useSelector((state) => state.products.productList);
                     <td>
                       <span className="table-remove">
                       <Button variant="danger"  onClick={()=>dispatch(deleteProduct(phone._id))}>Remove</Button>
+                      </span>
+                    </td>
+                    <td>
+                      <span className="table-remove">
+                    
+
+                  
+
+                  
+                      <EditProduct/>
+                      
                       </span>
                     </td>
                   </tr>

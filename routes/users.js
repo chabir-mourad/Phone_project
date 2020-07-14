@@ -21,10 +21,6 @@ const gravatar = require('gravatar')
 
 
 
-
-
-
-
 // @route  /register
 //@desc   Get the user Data
 // @access  Public

@@ -36,7 +36,9 @@ const Phones = (props) => {
    <Row>
   
       {productList.map((phone, key) => (
-        <Col lg={3} md={6} key={key}>
+        
+        <Col lg={3} md={6} key={key}>*
+        <Link to={`/product/` + phone._id}>
         <Card
                 border="light"
                 className="item-card"
@@ -47,11 +49,12 @@ const Phones = (props) => {
                 <Card.Body>
                   <Card.Title className="card-titre"> {phone.name}</Card.Title>
                   <Card.Text className="card-desc"><span>Stockage :{phone.storage}</span> <span>Ram :{phone.ram}</span> <span>Processeur :{phone.processor}</span></Card.Text>
-                  <Link to={`/product/` + phone._id}>
-                  <Button variant="primary">{phone.price}</Button>
-                  </Link>
+             
+                  <Button variant="primary" value={phone._id} type="submit"> {phone.price}</Button>
+               
                 </Card.Body>
               </Card>
+              </Link>
               </Col>
       ))}
      

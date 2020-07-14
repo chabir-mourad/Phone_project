@@ -1,11 +1,11 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {Card , Button} from 'react-bootstrap'
 
 
 import { getProductsById } from '../../actions/products';
-import Navbarmenu from '../Navbarmenu/Navbarmenu'
+
 
 
 
@@ -14,27 +14,24 @@ import Navbarmenu from '../Navbarmenu/Navbarmenu'
 
 const SelectedPhone = (props) => {
   
+const products = useSelector((state) => state.products);
+const phone = useSelector(state=>state.products.phone)
 
-  const products = useSelector((state) => state.products);
-  const phone = useSelector(state=>state.products.phone)
-console.log('phone', phone)
  const id =props.match.params.id
-const {isLoading , error  } = products
-console.log('error', error)
+const {isLoading } = products
 
-console.log(phone)
+
+
 const dispatch = useDispatch();
 
   useEffect(() => {
     
-    dispatch(getProductsById(props.match.params.id));
+    dispatch(getProductsById(id));
     return () => {
 }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
- 
-console.log(phone)
-console.log(id)
+
   return isLoading ? (
    
     <div className='row justify-content-md-center'>
