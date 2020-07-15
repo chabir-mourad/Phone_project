@@ -55,10 +55,11 @@ router.get('/phones' ,async(req,res)=> {
 
 
     try {
-    
- 
+  
+let name = req.query
+console.log(name)
 
-    const products = await Phone.find()
+    const products = await Phone.find(name)
     
     res.json(products)
     
@@ -167,6 +168,8 @@ res.json({message : "document updated"})
     }
 
 })
+
+
 
 
 

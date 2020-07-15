@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react'
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Navbar,Button , Nav,FormControl } from 'react-bootstrap' ;
+import {Navbar,Button , Nav } from 'react-bootstrap' ;
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {logout} from '../../actions/auth';
 
 import './Navbarmenu.css'
 import { Link } from 'react-router-dom';
+import Search from '../Search/Search';
 
 
 
@@ -54,8 +55,7 @@ const guestLinks = (
   <Navbar.Collapse id="responsive-navbar-nav">
  
     <Nav className="mr-auto">
-<FormControl  type="text" placeholder="rechercher" className="mr-sm-2" />
-<Button variant="outline-info" className="search-btn"><i className="fas fa-search" /></Button>
+<Search/>
 </Nav>
 
 

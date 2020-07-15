@@ -1,5 +1,5 @@
 
-import {PRODUCTS_NOT_FOUND , GET_PRODUCTS_SUCCESS ,GET_PRODUCTS, GET_PRODUCTS_BY_ID, GET_PRODUCTS_SUCCESS_BY_ID ,GET_PRODUCTS_FAIL_BY_ID, DELETE_PRODUCT_ERROR, DELETE_PRODUCT,  ADD_PRODUCT , ADD_ERROR , ADD_REQUEST, UPDATE_PRODUCT, UPDATE_PRODUCT_ERROR} from '../actions/types'
+import {PRODUCTS_NOT_FOUND , GET_PRODUCTS_SUCCESS ,GET_PRODUCTS, GET_PRODUCTS_BY_ID, GET_PRODUCTS_SUCCESS_BY_ID ,GET_PRODUCTS_FAIL_BY_ID, DELETE_PRODUCT_ERROR, DELETE_PRODUCT,  ADD_PRODUCT , ADD_ERROR , ADD_REQUEST, UPDATE_PRODUCT, UPDATE_PRODUCT_ERROR, SEARCH_PRODUCT, SEARCH_REQUEST, SEARCH_PRODUCT_FAIL} from '../actions/types'
 
 
 
@@ -11,7 +11,7 @@ const initialState = {
     isLoading: false,
     error : null ,
     phone : {}, 
-
+   inputSearch : ''
    
   };
   
@@ -92,12 +92,29 @@ const initialState = {
                    productList:state.productList.map(phone=>
                    phone.id === payload.id ? payload :phone)
             }
+
+
+        
             case UPDATE_PRODUCT_ERROR :
               return {
                 ...state ,
                 isLoading : false ,
                 error : payload
               }
+ 
+              case SEARCH_PRODUCT : 
+              return {
+                ...state ,
+                isLoading : false ,
+                inputSearch :payload
+              }
+   case SEARCH_PRODUCT_FAIL : 
+   return {
+  ...state ,
+  isLoading :false,
+
+    error: payload
+   }
   
 
 

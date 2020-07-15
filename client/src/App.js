@@ -19,7 +19,8 @@ import { loadUser } from './actions/auth';
 import Alert from './Components/Alert/Alert'
 import Loginadmin from './Components/AuthAdmin/Loginadmin'
 import EditableTable from './Components/DashboaardP&U/Dashboard';
-import AddProduct from './Components/ManageProducts/AddProduct';
+
+
 
  
 
@@ -64,7 +65,6 @@ function App() {
 
 <Route  path="/dashboard" component={EditableTable}/>
 
-<Route  path="/addProduct" component={AddProduct}/>
 
 
 

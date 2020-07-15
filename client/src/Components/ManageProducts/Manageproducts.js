@@ -6,7 +6,8 @@ import {getProducts , deleteProduct} from '../../actions/products'
 
 import EditProduct from '../EditProduct/EditProduct'
 import AddProduct from './AddProduct';
-function Manageproducts(phone) {
+
+function Manageproducts() {
 
 const isLoading = useSelector((state) => state.products.isLoading);
 const productList = useSelector((state) => state.products.productList);
@@ -86,9 +87,9 @@ const productList = useSelector((state) => state.products.productList);
 
                   
 
-                  
-                      <EditProduct/>
-                      
+                 
+                      <EditProduct  />
+                     
                       </span>
                     </td>
                   </tr>

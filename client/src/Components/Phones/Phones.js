@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, connect } from 'react-redux';
 import Slider from '../Slider/Slider';
 import Main from '../Main/Main';
 
@@ -13,7 +13,7 @@ import { getProducts} from '../../actions/products';
 const Phones = (props) => {
   const isLoading = useSelector((state) => state.products.isLoading);
   const productList = useSelector((state) => state.products.productList);
-  
+ 
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -35,7 +35,10 @@ const Phones = (props) => {
    <Container>
    <Row>
   
-      {productList.map((phone, key) => (
+      {props.inputSearch  ? productList.filter(el=>el.name.toLowerCase().includes(props.inputSearch.toLowerCase().trim()))
+
+      :  productList
+.map((phone, key) => (
         
         <Col lg={3} md={6} key={key}>*
         <Link to={`/product/` + phone._id}>
@@ -66,4 +69,10 @@ const Phones = (props) => {
  
 };
 
-export default Phones;
+const mapStateToProps = state => {
+  return {
+    inputSearch : state.products.inputSearch
+  }
+}
+
+export default connect(mapStateToProps)(Phones);

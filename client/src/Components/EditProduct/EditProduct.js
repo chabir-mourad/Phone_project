@@ -1,13 +1,18 @@
 import React , {useState} from 'react'
 import {Modal , Button , Form} from 'react-bootstrap'
-
+import {useSelector} from "react-redux"
 import { editProduct } from '../../actions/products';
  import { connect } from "react-redux";
  
-function EditProduct({editProduct} ) {
+function EditProduct({editProduct }   ) {
+ 
+
+  const productList = useSelector((state) => state.products.productList._id);
+  console.log(productList)
+  
     const [show, setShow ] = useState(false);
    
-   
+
 
     const [formData, setFormData] = useState({
         name :"" ,

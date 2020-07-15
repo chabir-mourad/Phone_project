@@ -89,7 +89,7 @@ aria-describedby="inputGroup-sizing-default" value={price} name="price" onChange
 
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="danger" onClick={handleClose}>
               Close
             </Button>
             <Button variant="success" type="submit" onClick={handleClose}>
