@@ -88,7 +88,7 @@ const productList = useSelector((state) => state.products.productList);
                   
 
                  
-                      <EditProduct  />
+                      <EditProduct  id ={phone._id} />
                      
                       </span>
                     </td>

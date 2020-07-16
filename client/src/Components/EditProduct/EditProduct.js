@@ -1,15 +1,17 @@
 import React , {useState} from 'react'
 import {Modal , Button , Form} from 'react-bootstrap'
-import {useSelector} from "react-redux"
-import { editProduct } from '../../actions/products';
- import { connect } from "react-redux";
- 
-function EditProduct({editProduct }   ) {
- 
+import { useDispatch} from "react-redux"
+import { editProduct  } from '../../actions/products';
 
-  const productList = useSelector((state) => state.products.productList._id);
-  console.log(productList)
+ 
+function EditProduct(props    ) {
+ 
+const id = props.id
+
   
+  const dispatch = useDispatch();
+
+
     const [show, setShow ] = useState(false);
    
 
@@ -34,7 +36,7 @@ function EditProduct({editProduct }   ) {
     e.preventDefault();
 
 
- editProduct( formData)
+ dispatch(editProduct(id,  formData))
 
 }
     const handleClose = () => setShow(false);
@@ -116,4 +118,4 @@ function EditProduct({editProduct }   ) {
 
 
   
-export default  connect(null , {editProduct})( EditProduct)
+export default  EditProduct;

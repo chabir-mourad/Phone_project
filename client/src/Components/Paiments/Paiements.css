@@ -1,0 +1,29 @@
+.payer-box{
+    background-color: #fdeca6;
+}
+.pay-image{
+    width: 400px;
+    height: 200px;
+}
+.mode3{
+    font-size: 25px;
+}
+.boxes{
+    margin: 80px;
+}
+.mode1{
+    font-size: 40px;
+    margin-left: 200px;
+    font-weight: 400;
+
+}
+.mode2{
+    font-size: 25px;
+    margin-left: 200px;
+    font-weight: 300;
+   
+    color:#ba304b;
+}
+.order-list{
+    margin-left: 220px;
+}

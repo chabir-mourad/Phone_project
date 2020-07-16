@@ -1,4 +1,4 @@
-import {GET_PRODUCTS , GET_PRODUCTS_SUCCESS , PRODUCTS_NOT_FOUND , GET_PRODUCTS_BY_ID , GET_PRODUCTS_SUCCESS_BY_ID , GET_PRODUCTS_FAIL_BY_ID, ADD_PRODUCT, ADD_ERROR, DELETE_PRODUCT , DELETE_PRODUCT_ERROR , ADD_REQUEST, UPDATE_PRODUCT, UPDATE_PRODUCT_ERROR, SEARCH_PRODUCT, SEARCH_PRODUCT_FAIL , SEARCH_REQUEST} from './types' 
+import {GET_PRODUCTS , GET_PRODUCTS_SUCCESS , PRODUCTS_NOT_FOUND , GET_PRODUCTS_BY_ID , GET_PRODUCTS_SUCCESS_BY_ID , GET_PRODUCTS_FAIL_BY_ID, ADD_PRODUCT, ADD_ERROR, DELETE_PRODUCT , DELETE_PRODUCT_ERROR , ADD_REQUEST, UPDATE_PRODUCT, UPDATE_PRODUCT_ERROR} from './types' 
 import {setAlert} from './alert'
 import axios from 'axios'
 
@@ -158,27 +158,4 @@ export const deleteProduct = (id)=> async dispatch => {
 
 
 
- export const searchProduct = (payload)=> async dispatch => {
-
-  try {
-  
-        
- const res =  await axios.get(`/admin/phone?name=${payload}`)
-dispatch({
-      type : SEARCH_PRODUCT , 
-       payload
-    })
-    
-  
-  } catch (err) {
-    dispatch({
-      type: SEARCH_PRODUCT_FAIL ,
-      payload: { msg: err.response.statusText, status: err.response.status }
-    });
-  }
-  
-  
-  
-  
-  
-    }
+ 

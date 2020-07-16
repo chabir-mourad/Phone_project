@@ -9,7 +9,7 @@ import {register} from '../../../actions/auth'
 import PropTypes from 'prop-types';
 // import Alert from '../../Alert/Alert'
 import {Redirect , Link} from 'react-router-dom'
-import '../Register/Register.css'
+import "./Register.css"
 
 
  const Register =({setAlert , register , isAuthenticated})=>  {
@@ -62,9 +62,14 @@ if (isAuthenticated) {
       <hr></hr>
   <Form onSubmit={e=> onSubmit(e)}>
   <InputGroup className="mb-3">
+
+
+  
   <Form.Label>Username : </Form.Label>
+  
+  <br/>
   <FormControl
-    placeholder="Enter your Name"
+    placeholder="Enter your Name" type="text"
     aria-label="Username"
     aria-describedby="basic-addon1" name="name" value={name}  onChange={e=> onChange(e)}
   />
@@ -73,6 +78,7 @@ if (isAuthenticated) {
 <InputGroup className="mb-3">
 <Form.Label>Email adress:</Form.Label>
   
+ 
   <Form.Control type="email" 
   placeholder="Enter your Email"
   aria-describedby="basic-addon1" name="email" value={email}  onChange={e=> onChange(e)} />
@@ -87,9 +93,9 @@ if (isAuthenticated) {
 
 </InputGroup>
 <InputGroup className="mb-3">
-<Form.Label> Address</Form.Label>
+<Form.Label> Address : </Form.Label>
   
-  <Form.Control type="adress" 
+  <Form.Control type="text" 
   placeholder="Enter your Adress"
   aria-describedby="basic-addon1 " name="adress" value={adress}  onChange={e=> onChange(e)}/>
 
@@ -97,7 +103,7 @@ if (isAuthenticated) {
 <InputGroup className="mb-3">
 <Form.Label>Code postal  : </Form.Label>
   
-  <Form.Control type="adress" 
+  <Form.Control type="text" 
   placeholder="Enter your zipCode"
   aria-describedby="basic-addon1" name="zipCode" value={zipCode}  onChange={e=> onChange(e)} />
 
@@ -105,7 +111,7 @@ if (isAuthenticated) {
 <InputGroup className="mb-3">
 <Form.Label>Téléphone mobile  :</Form.Label>
   
-  <Form.Control type="phone" 
+  <Form.Control type="text" 
   placeholder="Enter your PhoneNumber"
   aria-describedby="basic-addon1"  name="phoneNumber" value={phoneNumber}  onChange={e=> onChange(e)}/>
 
@@ -122,7 +128,7 @@ if (isAuthenticated) {
 DÉJÀ INSCRIT?
 
 </span> <span>
-   <Link to="/login">Login</Link>
+   <Link className="loginLink" to="/login">Login</Link>
 </span>
 
 

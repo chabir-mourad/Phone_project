@@ -1,0 +1,17 @@
+.question1{
+    font-size: 16px;
+    color: red;
+    margin-left: 5px;
+}
+.question2{
+    font-size: 20px;
+    color:green;
+    margin-left: 5px;
+}
+.parag{
+    text-align: justify;
+    margin-left: 5px;
+}
+.essai{
+    background-color: #f1ebd4;
+}

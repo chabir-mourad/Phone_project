@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
 const connectMongo = require('./config/db')
-
+const cors = require('cors');
 // Connect  Database
-
+app.use(cors())
 connectMongo()
 
 // initialise Body Parser

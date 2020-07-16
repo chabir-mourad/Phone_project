@@ -55,13 +55,17 @@ router.get('/phones' ,async(req,res)=> {
 
 
     try {
-  
-let name = req.query
-console.log(name)
 
-    const products = await Phone.find(name)
-    
-    res.json(products)
+const nameProduct = req.query.name.toUpperCase().trim()
+    const products = await Phone.find()
+    let arr = []
+    products.forEach(el=> {
+        if ((el.name.toUpperCase().trim().indexOf(nameProduct)) !== -1) {
+            arr = [...arr,el]
+        }
+    })
+  
+    res.json(arr)
     
         
     } catch (err) {
@@ -137,12 +141,10 @@ router.put('/phones/update/:id_phone', async(req,res)=>{
 
 
     try {
+        console.log(req.params.id_phone)
       let modifiedProduct = req.body
-
-let foundPhone = await Phone.findById(req.params.id_phone)
-
-
-await foundPhone.updateOne(modifiedProduct)
+    
+let modifiedProducts = await Phone.findOneAndUpdate({_id : req.params.id_phone} , modifiedProduct)
 res.json({message : "document updated"})
 
       

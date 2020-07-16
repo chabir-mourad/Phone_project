@@ -19,8 +19,14 @@ import { loadUser } from './actions/auth';
 import Alert from './Components/Alert/Alert'
 import Loginadmin from './Components/AuthAdmin/Loginadmin'
 import EditableTable from './Components/DashboaardP&U/Dashboard';
-
-
+import ApropSmart from './Components/AproposSmart/ApropsSmart';
+import Contacts from './Components/Contacts/Contacts';
+import Politiques from './Components/Politique/Politiques';
+import Paiements from './Components/Paiments/Paiements';
+import Annulation from './Components/Annulation/Annulation';
+import FAQ from './Components/FAQ/FAQ'
+import Achat from './Components/Achat/Achat';
+ 
 
  
 
@@ -64,14 +70,17 @@ function App() {
 <Route path='/admin' component={Loginadmin}/>
 
 <Route  path="/dashboard" component={EditableTable}/>
-
-
-
-
+<Route path='/users/footer/aprops' component={ApropSmart} />
+<Route  path='/users/footer/contacts' component={Contacts} />
+<Route path="/users/footer/confidentialites" component={Politiques} />
+<Route exact path="/users/footer/paiements" component={Paiements}/>
+<Route path="/users/footer/faq" component={FAQ}/>
+<Route path="/users/footer/annulation" component={Annulation}/>
+<Route path="/users/footer/achat" component={Achat}/>
 
 </Switch>
 
-
+{/* <Copyright/> */}
  
 
 

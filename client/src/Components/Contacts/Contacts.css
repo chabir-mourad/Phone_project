@@ -1,0 +1,51 @@
+.contact-box{
+    background-color: #fdeca6;
+}
+
+.box{
+    margin-top: 100px;
+    margin-left: 180px;
+    
+   
+}
+.box1{
+    position: relative;
+    right: 180px;
+    top:40px
+}
+.box2{
+    position: relative;
+    right: 60px; 
+    top:40px
+}
+.box3{
+    position: relative;
+    left:20px;
+    top:40px
+}
+.parap{
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 30px;
+}
+.link{
+    color:#e27f3a;
+}
+.t1{
+    font-size: 20px;
+}
+.t2{
+   position: relative;
+   bottom:70px;
+}
+.para{
+    line-height: 20px;
+    margin-top: 30px;
+}
+.box2-1{
+    margin-top: 30px;
+
+}
+.tel-para{
+    color:#62afac
+}

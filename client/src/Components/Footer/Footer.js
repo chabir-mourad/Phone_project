@@ -1,7 +1,11 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+
 import "./Footer.css";
+import { Link } from "react-router-dom";
+import Copyright from "../Copyright/Copyright";
 
  
 
@@ -12,7 +16,7 @@ function Footer() {
       <Container className="footer">
         <Row>
           <Col sm className="part1">
-            <h1> SmartTech</h1>
+            <h1 className="footer-title"> SmartTech</h1>
             <h4 className="mod-title"> Modalités de paiment</h4>
             <div className="imgs">
               <img
@@ -49,28 +53,24 @@ function Footer() {
               />
             </div>
           </Col>
-          <Col sm className="part2">
+          <Col sm  className="part2">
             <h3 className="serv-titre"> SOCIETE</h3>
             <ul className="serv">
             
                 <li>
-                  <a className="footer-link" href="/users/footer/aprops">A Propos de SmartTech </a>
+                  <Link  to="/users/footer/aprops"> <span className="confidentalité"> A Propos de SmartTech  </span></Link>
                 </li>
               
           
                 <li>
                    <a className="footer-link" href="/users/footer/contacts">
-                    Contacts
+                   <span className="confidentalité">Contacts</span> 
                   </a>
                 </li>
               
             
                 <li>
-                  
-                  <a className="footer-link" href="users/footer/confidentialites" >
-                
-                    Politiques et confidentialités
-                  </a>
+                <Link to="/users/footer/confidentialites" ><span className="confidentalité"> Politiques et confidentialités</span></Link>
                 </li>
               
             </ul>
@@ -83,7 +83,7 @@ function Footer() {
                   
                   <a className="footer-link" href="/users/footer/achat">
                     
-                    Comment Acheter
+                  <span className="confidentalité"> Comment Acheter </span>
                   </a>
                 </li>
               
@@ -92,7 +92,7 @@ function Footer() {
                   
                   <a className="footer-link" href="/users/footer/paiements">
                 
-                    Modalités de paiement
+                  <span className="confidentalité"> Modalités de paiement </span>
                   </a>
                 </li>
               
@@ -101,14 +101,14 @@ function Footer() {
                 
                   <a className="footer-link" href="/users/footer/faq">
                  
-                    FAQ
+                  <span className="confidentalité"> FAQ </span>
                   </a>
                 </li>
              
                 <li>
              
                   <a className="footer-link" href="/users/footer/annulation">
-                    Annulation et Retour
+                  <span className="confidentalité"> Annulation et Retour </span>
                   </a>
                 </li>
               
@@ -135,23 +135,15 @@ function Footer() {
 
             <ul>
               <li>Réseaux sociaux</li>
-<li><i className="fab fa-facebook" />
-              <i className="fab fa-youtube" />
-              <i className="fab fa-instagram" /></li>
+
+             <li><i className="fab fa-facebook fa-2x" />
+              <i className="fab fa-youtube fa-2x" />
+              <i className="fab fa-instagram fa-2x" /></li>
             </ul>
           </Col>
         </Row>
       </Container>
-      <div className="copyright">
-        
-   
-          Copyright <i className="fas fa-copyright"/> {new Date().getFullYear()} SmartTech. Tous les droits réservés
-          
-          
-      
-       
-      
-      </div>
+    <Copyright/>
     </div>
   );
 }

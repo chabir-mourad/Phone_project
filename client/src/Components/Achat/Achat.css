@@ -1,0 +1,75 @@
+.achat-tit{
+    margin-left: 50px;
+
+}
+
+.achat-tit1{
+    margin-left: 50px;
+    margin-top: 80px;
+    font-size: 20px;
+    color:blue;
+
+}
+
+.achat-para{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.bloc-achat1{
+    display: flex;
+    justify-content: space-around;
+    border:1px solid black;
+    padding:20px;
+}
+.etape{
+    font-size: 35px;
+}
+.numerotation{
+    font-size: 35px;
+    color: orange;
+    font-weight: 600;
+}
+.bloc-achat2{
+    display: flex;
+    justify-content: space-around;
+    border:1px solid black;
+    padding:20px;
+    position: relative;
+    top:20px;
+}
+.bloc-achat3{
+    display: flex;
+    justify-content: space-around;
+    border:1px solid black;
+    padding:20px;
+    position: relative;
+    top:40px;
+}
+.para-achat-1{
+    position: relative;
+    right: 50px;
+}
+.para-achat-2{
+    position: relative;
+    right: 60px;
+}
+.para-achat-3{
+    position: relative;
+    left: 90px;
+}
+.para-achat-4{
+    position: relative;
+    right: 40px;
+}
+.para-achat-5{
+    position: relative;
+    left: 100px;
+}
+.achat-bloc{
+    margin-top: 20px;
+    padding:20px;
+    
+}
+.ACHAT-BLOC{
+    background-color: #fdeca6;
+}
