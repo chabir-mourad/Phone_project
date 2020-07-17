@@ -1,4 +1,4 @@
-import {LOGIN_FAIL_ADMIN , LOGIN_SUCCESS_ADMIN, USER_LOADED} from '../actions/types'
+import {LOGIN_FAIL_ADMIN , LOGIN_SUCCESS_ADMIN, ADMIN_LOADED} from '../actions/types'
 
 
 
@@ -18,7 +18,7 @@ const initialState = {
   export default function (state = initialState, {payload , type} ) {
 
     switch (type) {
-        case USER_LOADED:
+        case ADMIN_LOADED:
             return {
                 ...state ,
                 ...payload ,
@@ -32,6 +32,7 @@ const initialState = {
             return {
                 
                 ...state ,
+                ...payload ,
                 isAuthenticatedAdmin: true,
                 loading: false ,
             

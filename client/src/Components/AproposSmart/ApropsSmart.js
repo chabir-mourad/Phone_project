@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Footer from '../Footer/Footer'
 import './AproposSmart.css'
+import Navbarmenu from '../Navbarmenu/Navbarmenu'
 
  function ApropSmart() {
     return (
+        <Fragment>
+
+      <Navbarmenu/>
         <div className="essai">
             <h1> About Us</h1>
             <h4 className='question1'> WHAT WE DO ?</h4>
@@ -18,6 +22,7 @@ import './AproposSmart.css'
        <p className="parag"> Our affordability, fast and reliable delivery, and the fact that you will always be able to find the phone that you are looking for in our offer, have made us stand out in the market, but they are simply symptoms of our dedication to what we are doing and our desire to constantly keep improving. We know that in order to do that, we need to keep in close touch with our customers and listen to their suggestions and critiques. This is why our customer service, which is always there to answer any question that you may have, is just as willing to listen as it is to inform.</p>
        <Footer/>
         </div>
+        </Fragment>
     )
 }
 export default ApropSmart

@@ -15,6 +15,8 @@ const config = require('config')
 const gravatar = require('gravatar')
 
 
+const admin = require('../middlware/admin')
+
 
 
 
@@ -143,7 +145,7 @@ res.status(500).send('Server is out')
 })
 
 
-router.delete('/users/:id_user' , async(req,res) => {
+router.delete('/users/:id_user', admin, async(req,res) => {
 const user_id = req.params.id_user
 
     try {

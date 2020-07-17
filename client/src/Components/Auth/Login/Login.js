@@ -29,7 +29,7 @@ const Login = ({ login, isAuthenticated  }) => {
 
   if (isAuthenticated){
     
-    return <Redirect to="/payement"/>;
+    return <Redirect to="/payement/:id"/>;
   }
 
  

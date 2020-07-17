@@ -43,7 +43,7 @@ const productList = useSelector((state) => state.products.productList);
                 <thead>
                   <tr>
                     <th className="text-center">Product Name</th>
-                    <th className="text-center">Image</th>
+                    
                     <th className="text-center">Stockage</th>
                     <th className="text-center">Ram</th>
                     <th className="text-center">Processeur</th>
@@ -60,9 +60,7 @@ const productList = useSelector((state) => state.products.productList);
                     <td className="pt-3-half">
                      {phone.name}
                     </td>
-                    <td className="pt-3-half" >
-                   {phone.image}
-                    </td>
+                   
                     <td className="pt-3-half" >
                      {phone.storage}
                     </td>

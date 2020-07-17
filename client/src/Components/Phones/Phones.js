@@ -48,7 +48,7 @@ const Phones = () => {
  
 .map((phone, key) => (
         
-        <Col lg={3} md={6} key={key}>*
+        <Col lg={3} md={6} key={key}>
         <Link to={`/product/` + phone._id}>
         <Card
                 border="light"

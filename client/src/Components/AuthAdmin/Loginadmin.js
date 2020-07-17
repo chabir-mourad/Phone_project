@@ -7,6 +7,12 @@ import { loginAdmin } from '../../actions/admin';
 import {Form , Card , InputGroup , FormControl} from 'react-bootstrap'
 
 import { Button } from 'react-bootstrap';
+
+
+
+
+
+
 const Loginadmin = ({ loginAdmin, isAuthenticatedAdmin }) => {
    
     
@@ -29,9 +35,8 @@ const Loginadmin = ({ loginAdmin, isAuthenticatedAdmin }) => {
 
   if (isAuthenticatedAdmin){
    
-  return <Redirect to="/dashboard"/>;
-  }
-
+    return <Redirect to="/dashboard"/>;
+    }
  
 
   return (

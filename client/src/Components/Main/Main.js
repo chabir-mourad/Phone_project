@@ -11,16 +11,16 @@ function Main() {
          <Row>
       
     
-       <h1 className="title1"> SMARTPHONES</h1>
+       <h1 className="smartphones"> SMARTPHONES</h1>
 
          </Row>
          <Row>
-         <p className="parag"> SmartTech est une société mettant en vente les meilleurs smartphones en Tunisie.<br/> 
+         <p className="smartech_definition"> SmartTech est une société mettant en vente les meilleurs smartphones en Tunisie.<br/> 
          Vous pouvez découvrir tous ces produits sur notre site marchand de SmartTech </p>
          </Row>
   <Row>
-    <Col sm={6}> <h1 className="title2"> LES PROMOTIONS</h1></Col>
-    <Col sm={6}><h1  className="title3"> LES NOUVEAUX PRODUITS</h1></Col>
+    <Col md={6}> <h1 className="promotion"> LES PROMOTIONS</h1></Col>
+    <Col md={6}><h1  className="newProduct"> LES NOUVEAUX PRODUITS</h1></Col>
   </Row>
   
 </Container>

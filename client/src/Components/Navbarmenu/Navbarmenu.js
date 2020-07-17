@@ -10,7 +10,7 @@ import './Navbarmenu.css'
 import { Link } from 'react-router-dom';
 import Search from '../Search/Search';
 
-
+import img from './smartphone.png'
 
 
 
@@ -34,11 +34,11 @@ const guestLinks = (
 
 <>
 <Link to="/login">
-<Button variant="danger"><i className="fas fa-user" />LogIn</Button>
+<Button variant="danger"><i class="fas fa-sign-in-alt" />{' '}LogIn</Button>
 </Link>
 
 <Link to="/register">
-<Button variant="info" className="btn-inscription"> <i className="fas fa-user" />Inscription</Button></Link>
+<Button variant="info" className="btn-inscription"> <i class="fas fa-user-plus" /> {' '}Inscription</Button></Link>
 </>
 
 
@@ -48,8 +48,8 @@ const guestLinks = (
   
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <i className="fas fa-mobile-alt" />
-    <Navbar.Brand href="#home">SmartTech</Navbar.Brand>
+            
+    <Navbar.Brand href="/"><img className="img_icon" src={img} alt="smartech_icon"/><span className="company_name">SmartTech</span> </Navbar.Brand>
   
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">

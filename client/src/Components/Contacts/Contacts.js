@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Container ,Col,Row} from  'react-bootstrap'
 import Footer from '../Footer/Footer'
 import './Contacts.css'
+import Navbarmenu from '../Navbarmenu/Navbarmenu'
 
 function Contacts() {
     return (
+        <Fragment>
+
+       <Navbarmenu/>
     <div className="contact-box">
             <Container className="box">
                 <Row >
@@ -38,6 +42,7 @@ function Contacts() {
             </Container>
             <Footer/>
             </div>
+            </Fragment>
             
     )
 }

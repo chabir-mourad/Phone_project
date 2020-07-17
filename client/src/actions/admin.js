@@ -19,7 +19,7 @@ export const loadAdmin =() => async dispatch => {
 
     try {
 
-        const res =await axios.get('createAdmin/auth')
+        const res =await axios.get('/createAdmin/auth')
         dispatch({
             type : ADMIN_LOADED,
             payload :  res.data

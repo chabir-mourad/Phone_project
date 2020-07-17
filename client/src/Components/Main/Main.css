@@ -1,1 +1,22 @@
+.smartphones {
+    margin: auto;
+    line-height: 3;
+    color: red;
+    font-size: 3rem;
+    font-weight: bold;
+}
 
+
+.smartech_definition {
+    margin: auto;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.promotion {
+    line-height: 3;
+}
+.newProduct {
+    line-height: 3;
+}

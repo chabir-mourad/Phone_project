@@ -15,10 +15,11 @@ import store from '../src/store'
 import Login from './Components/Auth/Login/Login';
 import Payement from './Components/payement/Payement';
  import PrivateRoute from './Components/routing/PrivateRouter';
+ import  PrivateAdminRouter from './Components/routing/PrivateAdminRouter'
 import { loadUser } from './actions/auth';
 import Alert from './Components/Alert/Alert'
 import Loginadmin from './Components/AuthAdmin/Loginadmin'
-import EditableTable from './Components/DashboaardP&U/Dashboard';
+import Dashboard from './Components/DashboaardP&U/Dashboard';
 import ApropSmart from './Components/AproposSmart/ApropsSmart';
 import Contacts from './Components/Contacts/Contacts';
 import Politiques from './Components/Politique/Politiques';
@@ -26,13 +27,16 @@ import Paiements from './Components/Paiments/Paiements';
 import Annulation from './Components/Annulation/Annulation';
 import FAQ from './Components/FAQ/FAQ'
 import Achat from './Components/Achat/Achat';
+
  
 
  
+
 
 
 if (localStorage.token) {
     setAuthToken(localStorage.token)
+   
 }
 
 
@@ -66,10 +70,11 @@ function App() {
 
 <Route exact path="/register" render={(props) => <Register {...props} /> }/>
 <Route exact path="/login" render={(props) => <Login {...props} /> }/>
-<PrivateRoute exact path="/payement" component ={Payement}/>
+<PrivateRoute exact path="/payement/:id" component ={Payement}/>
 <Route path='/admin' component={Loginadmin}/>
 
-<Route  path="/dashboard" component={EditableTable}/>
+<PrivateAdminRouter exact path="/dashboard" component ={Dashboard}/>
+
 <Route path='/users/footer/aprops' component={ApropSmart} />
 <Route  path='/users/footer/contacts' component={Contacts} />
 <Route path="/users/footer/confidentialites" component={Politiques} />
@@ -80,7 +85,7 @@ function App() {
 
 </Switch>
 
-{/* <Copyright/> */}
+
  
 
 

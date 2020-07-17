@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 
- const setAuthToken = (token) => {
+ const setAdminToken = (token) => {
 
     if (token) {
         axios.defaults.headers.common['x-auth-token'] =token
@@ -16,7 +16,7 @@ import axios from 'axios'
 
 
 
-export default setAuthToken 
+export default setAdminToken 
 
 
 

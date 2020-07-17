@@ -21,8 +21,8 @@ image : {
 },
 
 price : {
-    type : String 
-    // required : true
+    type : String ,
+    required : true
 },
 
 
@@ -39,6 +39,12 @@ processor : {
 storage : {
     type : String ,
      required : true
+},
+
+
+description : {
+    type : String ,
+    
 }
 
 

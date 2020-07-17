@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Footer from '../Footer/Footer'
 import './Annulation.css'
+import Navbarmenu from '../Navbarmenu/Navbarmenu'
 
 function Annulation() {
     return (
+        <Fragment>
+        <Navbarmenu/>
         <div className="retour-bloc">
             <h1 className="annulate"> Annulation er retour</h1>
             <div className="encast-bloc">
@@ -26,6 +29,8 @@ function Annulation() {
               </div>
             <Footer/>
         </div>
+        
+</Fragment>
     )
 }
 

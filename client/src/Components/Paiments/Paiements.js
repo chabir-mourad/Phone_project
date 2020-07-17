@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Footer from '../Footer/Footer'
 import { Container,Col,Row} from 'react-bootstrap'
 import './Paiements.css'
+import Navbarmenu from '../Navbarmenu/Navbarmenu'
 
  function Paiements() {
     return (
+        <Fragment>
+<Navbarmenu/>
+        
         <div className="payer-box">
             <h1 className="mode1"> Modes de paiement</h1>
             <h2  className="mode2"> Pour le moment nous avons 3 modes de paiement:</h2>
@@ -50,6 +54,7 @@ import './Paiements.css'
                        </Container>
                        <Footer/>
         </div>
+        </Fragment>
     )
 }
 export default Paiements

@@ -1,0 +1,41 @@
+.select-carac{
+    text-align: right;
+    text-align: justify;
+    margin-top: 380px;
+    margin-right: 100px;
+    border:10px solid grey;
+    background-color: palegoldenrod;
+    
+ }
+  .select-item{ 
+     background-color: pink;
+ }
+ .fiche{
+     font-size: 30px;
+     color:blue;
+ }
+ .acheter-select{
+     width: 110px;
+     height: 50px;
+     margin-top: 10px;
+     margin-left: 50px;
+ }
+ .price-select{
+     width: 110px;
+     height: 50px;
+     margin-left: 50px;
+ 
+ }
+ .corps-select{
+     height: 250px;
+ }
+ .selects-btn{
+     display: flex;
+     justify-content: space-around;
+     flex-direction: column;
+ }
+ .hbo{
+     background-color:#e3d7a3;
+     width: 200rem;
+      height:45rem;
+ }

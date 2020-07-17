@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Footer from '../Footer/Footer'
 import './FAQ.css'
+import Navbarmenu from '../Navbarmenu/Navbarmenu'
 
  function FAQ() {
     return (
+        <Fragment>
+
+        <Navbarmenu/>
         <div className="glob-question">
             <h1 className="question-titre"> Questions fréquemment posées</h1>
             <div className="questions-englob">
@@ -25,6 +29,7 @@ import './FAQ.css'
             </div>
        <Footer/>
         </div>
+        </Fragment>
     )
 }
 export default FAQ

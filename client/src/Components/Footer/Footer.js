@@ -16,41 +16,17 @@ function Footer() {
       <Container className="footer">
         <Row>
           <Col sm className="part1">
-            <h1 className="footer-title"> SmartTech</h1>
+         <h1 className="footer-title"> SmartTech</h1>
             <h4 className="mod-title"> Modalités de paiment</h4>
             <div className="imgs">
-              <img
-                className="pay-img"
-                src="https://images.mobileshop.eu/payment/bank-transfer.png"
-                alt="transfer-bank"
-              />
-              <img
-                className="pay-img"
-                src="https://images.mobileshop.eu/payment/visa.png"
-                alt="visa"
-              />
-              <img
-                className="pay-img"
-                src="https://images.mobileshop.eu/payment/mastercard.png"
-                alt="mastercard"
-              />
+            <i class="far fa-credit-card  fa-2x" />
+            <i class="fab fa-cc-visa  fa-2x" />
+            <i class="fab fa-cc-mastercard  fa-2x"/>
               <br />
 
-              <img
-                className="pay-img"
-                src="https://images.mobileshop.eu/payment/paypal.png"
-                alt="paypal"
-              />
-              <img
-                className="pay-img"
-                src="https://images.mobileshop.eu/payment/cache.png"
-                alt="cache-payement"
-              />
-              <img
-                className="pay-img"
-                src="https://images.mobileshop.eu/payment/card.png"
-                alt="payement-card"
-              />
+              <i class="fab fa-paypal  fa-2x" />
+              <i class="fab fa-cc-amazon-pay fa-2x" />
+              <i class="fa fa-truck fa-2x"></i>
             </div>
           </Col>
           <Col sm  className="part2">

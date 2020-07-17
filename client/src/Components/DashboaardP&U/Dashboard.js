@@ -2,9 +2,14 @@ import React , {useEffect, Fragment} from "react";
 import {useSelector , useDispatch} from 'react-redux'
 import {getUsers , deleteUser} from '../../actions/users'
 import Manageproducts from "../ManageProducts/Manageproducts";
+import  setAdminToken  from '../../globalHeader/setAdminToken';
+import { loadAdmin } from "../../actions/admin";
+import  store from "../../store";
 
 
-
+if (localStorage) {
+  setAdminToken(localStorage.token)
+}
 
 
 function EditableTable() {
@@ -14,6 +19,7 @@ function EditableTable() {
 
     const dispatch = useDispatch();
     useEffect(() => {
+      store.dispatch(loadAdmin())
         dispatch(getUsers());
         return () => {};
       }, [dispatch]);

@@ -43,7 +43,7 @@ const onSubmit =async e=> {
 }
 
 if (isAuthenticated) {
- return <Redirect to="/payement"></Redirect>
+ return <Redirect to="/payement/:id"></Redirect>
 }
 
 

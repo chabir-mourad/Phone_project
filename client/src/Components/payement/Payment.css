@@ -1,0 +1,67 @@
+.selection-img{
+    background-color: #c5f1ef;
+}
+.selection-titre{
+    background-color: #cc8e6a;
+    padding:20px;
+    margin:0 auto;
+    text-align: center;
+}
+.corps-selection{
+    padding: 0px;
+}
+/* .gigant{
+  position: relative;
+  right:  350px;
+  bottom:100px;
+}
+.gigantesque{
+
+background-color: #edd9df;
+
+} */
+ /* .comand-btn{
+    width:250px;
+    margin-bottom: 100px;
+    margin-left: 850px;
+    height: 60px;
+}
+.final-btn{
+    width:250px;
+    margin-bottom: 100px;
+     margin-left: 550px; 
+     height: 60px; 
+
+ }  */
+.peyement-titre{
+    background-color: sandybrown;
+    font-size: 20px;
+    text-align: center;
+    padding:15px;
+}
+.prix-titre{
+    color:red;
+    font-size: 20px;
+} 
+.elwess{
+    margin-top: 440px;
+    display: flex;
+    justify-content: space-around;
+}
+.poursuivre-btn{
+    width:250px;
+    margin-top: 30px;
+}
+.continuer-btn{
+    width:500px;
+    margin-left:20px;
+    margin-top: 30px;
+
+}
+.contenu{
+    background-color: #b4b5c5;
+    margin: 0 px;
+    padding: 0px;
+    width: 2500px;
+    height: 660px;
+}

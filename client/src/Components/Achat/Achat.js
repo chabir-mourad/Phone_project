@@ -1,10 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Footer from "../Footer/Footer";
 import { Container, Col, Row } from "react-bootstrap";
 import './Achat.css'
+import Navbarmenu from '../Navbarmenu/Navbarmenu'
 
 function Achat() {
   return (
+    <Fragment>
+<Navbarmenu/>
+  
     <div className="ACHAT-BLOC">
       <h1 className="achat-tit"> COMMENT ACHETER?</h1>
       <h2 className="achat-tit1"> TROUVER LE TELEPHONE QUI VOUS CONVIENT</h2>
@@ -129,6 +133,7 @@ function Achat() {
 
       <Footer />
     </div>
+    </Fragment>
   );
 }
 export default Achat;

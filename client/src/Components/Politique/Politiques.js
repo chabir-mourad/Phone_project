@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Footer from '../Footer/Footer'
 import './Politiques.css'
+import Navbarmenu from '../Navbarmenu/Navbarmenu'
 
 function Politiques() {
     return (
+        <Fragment>
+
+        <Navbarmenu/>
         <div className="englob-box">
             <h1 className="tit"> POLITIQUE DE CONFIDENTIALITE</h1>
             <h4 className="tit1"> 1. Général</h4>
@@ -57,6 +61,7 @@ En général, les informations personnelles que vous nous fournissez sont utilis
 -statistiques</p>
 <Footer/>
         </div>
+        </Fragment>
     )
 }
 

@@ -154,8 +154,6 @@ export const deleteProduct = (id)=> async dispatch => {
       
 
 
- // Filter Products
-
 
 
  
