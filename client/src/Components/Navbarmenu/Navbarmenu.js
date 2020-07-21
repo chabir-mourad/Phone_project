@@ -34,11 +34,11 @@ const guestLinks = (
 
 <>
 <Link to="/login">
-<Button variant="danger"><i class="fas fa-sign-in-alt" />{' '}LogIn</Button>
+<Button variant="danger"><i className="fas fa-sign-in-alt" />{' '}LogIn</Button>
 </Link>
 
 <Link to="/register">
-<Button variant="info" className="btn-inscription"> <i class="fas fa-user-plus" /> {' '}Inscription</Button></Link>
+<Button variant="info" className="btn-inscription"> <i className="fas fa-user-plus" /> {' '}Inscription</Button></Link>
 </>
 
 

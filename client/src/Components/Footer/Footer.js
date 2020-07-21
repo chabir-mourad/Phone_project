@@ -19,14 +19,14 @@ function Footer() {
          <h1 className="footer-title"> SmartTech</h1>
             <h4 className="mod-title"> Modalités de paiment</h4>
             <div className="imgs">
-            <i class="far fa-credit-card  fa-2x" />
-            <i class="fab fa-cc-visa  fa-2x" />
-            <i class="fab fa-cc-mastercard  fa-2x"/>
+            <i className="far fa-credit-card  fa-2x" />
+            <i className="fab fa-cc-visa  fa-2x" />
+            <i className="fab fa-cc-mastercard  fa-2x"/>
               <br />
 
-              <i class="fab fa-paypal  fa-2x" />
-              <i class="fab fa-cc-amazon-pay fa-2x" />
-              <i class="fa fa-truck fa-2x"></i>
+              <i className="fab fa-paypal  fa-2x" />
+              <i className="fab fa-cc-amazon-pay fa-2x" />
+              <i className="fa fa-truck fa-2x"></i>
             </div>
           </Col>
           <Col sm  className="part2">

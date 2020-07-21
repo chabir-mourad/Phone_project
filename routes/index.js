@@ -93,7 +93,7 @@ router.get('/phones/:id_phone' ,  async (req, res) => {
 //@desc   delete a phone
 // @access  Private
 
-router.delete('/phones/delete/:id_phone',admin ,  async (req, res) => {
+router.delete('/phones/delete/:id_phone',  async (req, res) => {
 	try {
 		const phone = await Phone.findById(req.params.id_phone);
 
@@ -105,7 +105,7 @@ router.delete('/phones/delete/:id_phone',admin ,  async (req, res) => {
 	}
 });
 
-router.put('/phones/update/:id_phone',admin  ,async (req, res) => {
+router.put('/phones/update/:id_phone' ,async (req, res) => {
 	try {
 		console.log(req.params.id_phone);
 		let modifiedProduct = req.body;

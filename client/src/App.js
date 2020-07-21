@@ -13,7 +13,7 @@ import SelectedPhone from './Components/SelectedPhone/SelectedPhone'
 import {Provider} from 'react-redux'
 import store from '../src/store'
 import Login from './Components/Auth/Login/Login';
-import Payement from './Components/payement/Payement';
+import Payement from './Components/payement/Payement'
  import PrivateRoute from './Components/routing/PrivateRouter';
  import  PrivateAdminRouter from './Components/routing/PrivateAdminRouter'
 import { loadUser } from './actions/auth';

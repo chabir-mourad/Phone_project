@@ -42,6 +42,7 @@ background-color: #edd9df;
 .prix-titre{
     color:red;
     font-size: 20px;
+    
 } 
 .elwess{
     margin-top: 440px;
@@ -64,4 +65,5 @@ background-color: #edd9df;
     padding: 0px;
     width: 2500px;
     height: 660px;
+    max-width: 1525px;
 }

@@ -79,7 +79,7 @@ if (isAuthenticated) {
 <Form.Label>Email adress:</Form.Label>
   
  
-  <Form.Control type="email" 
+  <Form.Control type="text" 
   placeholder="Enter your Email"
   aria-describedby="basic-addon1" name="email" value={email}  onChange={e=> onChange(e)} />
 
